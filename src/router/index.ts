@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
-const routes: Array<RouteRecordRaw> = [
+export const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     redirect: "/home",
@@ -11,6 +11,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/pages/Home.vue"),
     meta: {
       level: 1,
+      nav: true,
     },
   },
   {
@@ -19,6 +20,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/pages/Login.vue"),
     meta: {
       level: 1,
+      nav: true,
     },
   },
   {
@@ -27,6 +29,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/pages/Category.vue"),
     meta: {
       level: 1,
+      nav: true,
     },
   },
   {
@@ -35,6 +38,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/pages/Cart.vue"),
     meta: {
       level: 1,
+      nav: true,
     },
   },
   {
@@ -43,6 +47,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/pages/User.vue"),
     meta: {
       level: 1,
+      nav: true,
     },
   },
 ];
@@ -51,5 +56,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+
+export const NavRoutes = routes.filter((route) => route.meta?.nav);
 
 export default router;

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import NavBar from './components/NavBar.vue';
 const transitionName = ref('slide-left');
 
 </script>
