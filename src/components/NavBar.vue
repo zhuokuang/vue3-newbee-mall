@@ -1,7 +1,10 @@
 <template>
 	<div class="nav-bar">
 		<div class="nav-list">
-			<router-link class="nav-item" v-for="route in NavRoutes" :to="route.path">{{ route.name }}</router-link>
+			<router-link class="nav-item" v-for="route in NavRoutes" :to="route.path">
+				<van-icon :name="(route.meta?.icon as string)" size="24" />
+				<span>{{ route.meta?.title }}</span>
+			</router-link>
 		</div>
 	</div>
 </template>

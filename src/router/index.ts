@@ -12,6 +12,8 @@ export const routes: Array<RouteRecordRaw> = [
     meta: {
       level: 1,
       nav: true,
+      icon: "wap-home-o",
+      title: "主页",
     },
   },
   {
@@ -20,7 +22,6 @@ export const routes: Array<RouteRecordRaw> = [
     component: () => import("@/pages/Login.vue"),
     meta: {
       level: 1,
-      nav: true,
     },
   },
   {
@@ -30,6 +31,8 @@ export const routes: Array<RouteRecordRaw> = [
     meta: {
       level: 1,
       nav: true,
+      icon: "more-o",
+      title: "分类",
     },
   },
   {
@@ -39,6 +42,8 @@ export const routes: Array<RouteRecordRaw> = [
     meta: {
       level: 1,
       nav: true,
+      icon: "cart-o",
+      title: "购物车",
     },
   },
   {
@@ -48,6 +53,8 @@ export const routes: Array<RouteRecordRaw> = [
     meta: {
       level: 1,
       nav: true,
+      icon: "user-circle-o",
+      title: "我的",
     },
   },
 ];
