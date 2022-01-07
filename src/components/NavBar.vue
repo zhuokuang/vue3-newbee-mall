@@ -11,19 +11,32 @@
 
 <script setup lang="ts">
 import { NavRoutes } from "@/router";
-console.log(NavRoutes);
 </script>
 
 <style scoped>
 .nav-bar {
 	width: 100%;
+	height: 40px;
 	position: fixed;
 	bottom: 0;
+	padding: 5px;
+	font-size: 12px;
+	box-sizing: content-box;
+}
+.nav-bar a {
+	color: #666;
 }
 
 .nav-list {
-	/* width: 100%; */
+	height: 100%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
+}
+
+.nav-item {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 </style>

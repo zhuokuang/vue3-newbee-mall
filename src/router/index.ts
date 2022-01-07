@@ -8,10 +8,11 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: "/home",
     name: "home",
-    component: () => import("@/pages/Home.vue"),
+    component: () => import("@/pages/home/index.vue"),
     meta: {
       level: 1,
       nav: true,
+      // 使用 vant 组件库图标字体，icon 为图标字体名称
       icon: "wap-home-o",
       title: "主页",
     },
