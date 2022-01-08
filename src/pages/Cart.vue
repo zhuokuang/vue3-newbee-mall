@@ -5,8 +5,12 @@ import NavBar from '@/components/NavBar.vue';
 
 <template>
 	<div>Cart</div>
+	<div class="fragment"></div>
 	<nav-bar />
 </template>
 
 <style scoped>
+.fragment {
+	height: 1000px;
+}
 </style>

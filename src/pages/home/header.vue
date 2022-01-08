@@ -1,11 +1,17 @@
 <script setup lang="ts">
+import { defineProps } from "vue";
+
+const props = defineProps({
+	// header 的状态
+	active: Boolean,
+});
 
 </script>
 
 <template>
-	<div class="header active">
+	<div class="header" :class="{ active: props.active }">
 		<router-link to="/category">
-			<van-icon name="ellipsis" />
+			<van-icon name="ellipsis" :color="active ? '#ffffff' : '#1baeae'" />
 		</router-link>
 		<div class="search">
 			<div class="app-name">新峰商城</div>
@@ -13,7 +19,7 @@
 			<router-link class="search-title" to="/">山河无恙，人间皆安</router-link>
 		</div>
 		<router-link to="/user">
-			<van-icon name="user-o" />
+			<van-icon name="user-o" :color="active ? '#ffffff' : '#1baeae'" />
 		</router-link>
 	</div>
 </template>
@@ -26,6 +32,8 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: fixed;
+	top: 0;
 }
 
 .header.active {
