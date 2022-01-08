@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import Header from "./header.vue";
-import NavBar from '@/components/NavBar.vue';
+import BottomBar from '@/components/BottomBar.vue';
 
 const activeHeader = ref<boolean>(false);
 
 const onScroll = (e: any) => {
-	const scrollTop = e.target.scrollTop;
+	const scrollTop = e.target?.scrollTop;
 	if (scrollTop > 50) {
 		activeHeader.value = true;
 	}
@@ -24,7 +24,7 @@ const onScroll = (e: any) => {
 		<!-- TODO: delete fragment -->
 		<div class="fragment"></div>
 	</div>
-	<nav-bar />
+	<bottom-bar />
 </template>
 
 <style scoped>

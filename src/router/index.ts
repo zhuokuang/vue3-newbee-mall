@@ -20,7 +20,7 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: "/login",
     name: "login",
-    component: () => import("@/pages/Login.vue"),
+    component: () => import("@/pages/login/index.vue"),
     meta: {
       level: 1,
     },
