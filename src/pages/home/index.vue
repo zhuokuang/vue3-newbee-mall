@@ -9,9 +9,11 @@ const onScroll = (e: any) => {
 	const scrollTop = e.target?.scrollTop;
 	if (scrollTop > 50) {
 		activeHeader.value = true;
+		console.log('header active');
 	}
 	else {
 		activeHeader.value = false;
+		console.log('header deactive');
 	}
 
 }

@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { NavBar } from 'vant';
+import { postLogin } from '@/api/login';
 
 type User = {
 	username: string,
@@ -22,7 +23,10 @@ const onClkMore = () => {
 
 const onSubmit = (form: User) => {
 	// TODO: submit logic
-	console.log(form);
+	postLogin(form).then(res => {
+		console.log(res);
+		router.push('/home');
+	});
 }
 
 </script>
@@ -52,6 +56,7 @@ const onSubmit = (form: User) => {
 			<van-field
 				name="password"
 				v-model="password"
+				type="password"
 				label="密码"
 				placeholder="密码"
 				:rules="[{ required: true, message: '请填写用户名' }]"
