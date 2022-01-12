@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { NavBar } from 'vant';
+import { NavBar, Toast } from 'vant';
 import { postLogin } from '@/api/login';
 
 type User = {
@@ -23,9 +23,14 @@ const onClkMore = () => {
 
 const onSubmit = (form: User) => {
 	// TODO: submit logic
-	postLogin(form).then(res => {
-		console.log(res);
-		router.push('/home');
+	postLogin(form).then(({ data }) => {
+		if (data.code === 0) {
+			Toast.success('登录成功');
+			router.push('/home');
+		}
+		else {
+			Toast.fail('账号或者密码错误');
+		}
 	});
 }
 

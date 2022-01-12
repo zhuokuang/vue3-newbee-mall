@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+import { getSwipeImg } from '@/api/getSwipeImg';
 import Header from "./header.vue";
 import BottomBar from '@/components/BottomBar.vue';
+import Swiper, { Image } from '@/components/Swiper.vue';
 
 const activeHeader = ref<boolean>(false);
+const swipeImages = ref<Image[]>([]);
 
 const onScroll = (e: any) => {
 	const scrollTop = e.target?.scrollTop;
@@ -18,11 +21,19 @@ const onScroll = (e: any) => {
 
 }
 
+onMounted(() => {
+	getSwipeImg().then(({ data }) => {
+		console.log(data);
+		swipeImages.value = data;
+	})
+});
+
 </script>
 
 <template>
 	<Header :active="activeHeader" />
 	<div class="container" @scroll.passive="onScroll">
+		<Swiper :images="swipeImages" />
 		<!-- TODO: delete fragment -->
 		<div class="fragment"></div>
 	</div>
@@ -34,6 +45,7 @@ const onScroll = (e: any) => {
 	height: 100%;
 	overflow: auto;
 }
+
 .fragment {
 	height: 1000px;
 }

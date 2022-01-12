@@ -1,14 +1,4 @@
 import axios from "./axios";
 
-export const postLogin = ({
-  username,
-  password,
-}: {
-  username: string;
-  password: string;
-}) => {
-  return axios.post("/api/login", {
-    username,
-    password,
-  });
-};
+export const postLogin = (body: { username: string; password: string }) =>
+  axios.post("/api/login", body);

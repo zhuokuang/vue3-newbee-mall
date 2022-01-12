@@ -4,10 +4,22 @@ export default [
   {
     url: "/api/login",
     method: "post",
-    response: () => {
+    response: (req: any) => {
+      const { username, password } = req.body;
+      if (
+        (username === "admin" && password === "123") ||
+        (username === "kz" && password === "cr") ||
+        (username === "cr" && password === "kz")
+      ) {
+        return {
+          code: 0,
+          message: "login success",
+          data: {},
+        };
+      }
       return {
-        code: 200,
-        message: "login success",
+        code: 1,
+        message: "login failed",
         data: {},
       };
     },

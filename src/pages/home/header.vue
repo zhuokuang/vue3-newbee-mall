@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
-
 const props = defineProps({
 	// header 的状态
 	active: Boolean,
@@ -34,6 +32,7 @@ const props = defineProps({
 	align-items: center;
 	position: fixed;
 	top: 0;
+	z-index: 1000;
 }
 
 .header.active {
