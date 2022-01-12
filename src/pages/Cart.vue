@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import NavBar from '@/components/NavBar.vue';
+import BottomBar from '@/components/BottomBar.vue';
 
 </script>
 
 <template>
 	<div>Cart</div>
-	<nav-bar />
+	<div class="fragment"></div>
+	<bottom-bar />
 </template>
 
 <style scoped>
+.fragment {
+	height: 1000px;
+}
 </style>

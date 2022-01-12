@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import NavBar from '@/components/NavBar.vue';
+import BottomBar from '@/components/BottomBar.vue';
 
 </script>
 
 <template>
 	<div>Category</div>
-	<nav-bar />
+	<bottom-bar />
 </template>
 
 <style scoped>

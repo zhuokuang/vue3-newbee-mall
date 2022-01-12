@@ -8,19 +8,21 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: "/home",
     name: "home",
-    component: () => import("@/pages/Home.vue"),
+    component: () => import("@/pages/home/index.vue"),
     meta: {
       level: 1,
       nav: true,
+      // 使用 vant 组件库图标字体，icon 为图标字体名称
+      icon: "wap-home-o",
+      title: "主页",
     },
   },
   {
     path: "/login",
     name: "login",
-    component: () => import("@/pages/Login.vue"),
+    component: () => import("@/pages/login/index.vue"),
     meta: {
       level: 1,
-      nav: true,
     },
   },
   {
@@ -30,6 +32,8 @@ export const routes: Array<RouteRecordRaw> = [
     meta: {
       level: 1,
       nav: true,
+      icon: "more-o",
+      title: "分类",
     },
   },
   {
@@ -39,6 +43,8 @@ export const routes: Array<RouteRecordRaw> = [
     meta: {
       level: 1,
       nav: true,
+      icon: "cart-o",
+      title: "购物车",
     },
   },
   {
@@ -48,6 +54,8 @@ export const routes: Array<RouteRecordRaw> = [
     meta: {
       level: 1,
       nav: true,
+      icon: "user-circle-o",
+      title: "我的",
     },
   },
 ];
