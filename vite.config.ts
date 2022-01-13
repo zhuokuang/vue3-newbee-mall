@@ -17,6 +17,14 @@ export default defineConfig({
         }),
       ],
     },
+    preprocessorOptions: {
+      less: {
+        additionalData: `@import "${path.resolve(
+          __dirname,
+          "src/assets/style/main.less"
+        )}";`,
+      },
+    },
   },
   plugins: [
     vue(),

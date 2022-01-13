@@ -22,7 +22,7 @@ const props = defineProps({
 	</div>
 </template>
 
-<style scoped>
+<style scoped lang="less">
 .header {
 	width: 100%;
 	height: 50px;
@@ -53,7 +53,7 @@ const props = defineProps({
 	padding: 0 10px;
 	font-size: 20px;
 	font-weight: 700;
-	color: #1baeae;
+	color: @main-green;
 	border-right: 1px solid #2c3e50;
 }
 
