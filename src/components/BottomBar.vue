@@ -21,11 +21,13 @@ import { NavRoutes } from "@/router";
 .nav-bar {
 	width: 100%;
 	height: 40px;
+	background-color: #fff;
 	position: fixed;
 	bottom: 0;
 	padding: 5px;
 	font-size: 12px;
 	box-sizing: content-box;
+	z-index: 1001;
 }
 .nav-bar a {
 	color: #666;

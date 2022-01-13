@@ -1,15 +1,30 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, reactive, toRefs, onMounted } from "vue";
 import BottomBar from '@/components/BottomBar.vue';
-import Swiper, { Image } from '@/components/Swiper.vue';
+import Swiper from '@/components/Swiper.vue';
 import Header from "./header.vue";
-import KingkongBall, { Kingkong } from "./kingkongBall.vue";
+import KingkongBall from "./kingkongBall.vue";
+import GoodsList from '@/components/GoodsList.vue';
 import { getSwipeImg } from '@/api/getSwipeImg';
 import { getKingkong } from "@/api/getKingkong";
+import { getAllGoodsList } from '@/api/getGoodsList';
+import { GoodsItem, Kingkong, Image } from '@/api/types';
+
+type Goods = {
+	newGoodses: GoodsItem[],
+	hotGoodses: GoodsItem[],
+	recommendGoodses: GoodsItem[],
+};
 
 const activeHeader = ref<boolean>(false);
 const swipeImages = ref<Image[]>([]);
 const kingkongs = ref<Kingkong[]>([]);
+const goods = reactive<Goods>({
+	newGoodses: [],
+	hotGoodses: [],
+	recommendGoodses: [],
+});
+const { newGoodses, hotGoodses, recommendGoodses } = toRefs(goods);
 
 const onScroll = (e: any) => {
 	const scrollTop = e.target?.scrollTop;
@@ -31,6 +46,10 @@ onMounted(() => {
 	getKingkong().then(({ data }) => {
 		kingkongs.value = data;
 	});
+	getAllGoodsList().then((res) => {
+		[goods.newGoodses, goods.hotGoodses, goods.recommendGoodses] = res;
+		console.log(goods)
+	})
 });
 
 </script>
@@ -39,9 +58,12 @@ onMounted(() => {
 	<Header :active="activeHeader" />
 	<div class="container" @scroll.passive="onScroll">
 		<Swiper :images="swipeImages" />
-		<!-- TODO: delete fragment -->
 		<KingkongBall :list="kingkongs" />
-		<div class="fragment"></div>
+		<div class="goods">
+			<GoodsList title="新品上线" :list="newGoodses" />
+			<GoodsList title="热门商品" :list="hotGoodses" />
+			<GoodsList title="最新推荐" :list="recommendGoodses" />
+		</div>
 	</div>
 	<bottom-bar />
 </template>
@@ -52,7 +74,7 @@ onMounted(() => {
 	overflow: auto;
 }
 
-.fragment {
-	height: 1000px;
+.goods {
+	margin-bottom: 80px;
 }
 </style>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-const props = defineProps({
+
+defineProps({
 	// header 的状态
 	active: Boolean,
 });
@@ -7,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-	<div class="header" :class="{ active: props.active }">
+	<div class="header" :class="{ active }">
 		<router-link to="/category">
 			<van-icon name="ellipsis" :color="active ? '#ffffff' : '#1baeae'" />
 		</router-link>

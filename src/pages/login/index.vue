@@ -3,11 +3,7 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { NavBar, Toast } from 'vant';
 import { postLogin } from '@/api/login';
-
-type User = {
-	username: string,
-	password: string,
-};
+import { User } from '@/api/types'
 
 const router = useRouter();
 const username = ref('');
@@ -22,9 +18,9 @@ const onClkMore = () => {
 }
 
 const onSubmit = (form: User) => {
-	// TODO: submit logic
-	postLogin(form).then(({ data }) => {
-		if (data.code === 0) {
+	postLogin(form).then((res) => {
+		console.log('res', res);
+		if (res.code === 0) {
 			Toast.success('登录成功');
 			router.push('/home');
 		}

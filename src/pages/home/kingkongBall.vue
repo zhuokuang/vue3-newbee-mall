@@ -1,13 +1,7 @@
 <script setup lang="ts">
+import { Kingkong } from '@/api/types';
 
-export interface Kingkong {
-	categoryId: number;
-	name: string;
-	imgUrl: string;
-	linkTo: string;
-}
-
-const props = defineProps<{
+defineProps<{
 	list: Kingkong[];
 }>();
 
@@ -15,7 +9,7 @@ const props = defineProps<{
 
 <template>
 	<div class="kingkong">
-		<a class="kingkong-icon" v-for="icon in props.list" :key="icon.categoryId" :href="icon.linkTo">
+		<a class="kingkong-icon" v-for="icon in list" :key="icon.categoryId" :href="icon.linkTo">
 			<img :src="icon.imgUrl" :alt="icon.name" />
 			<span>{{ icon.name }}</span>
 		</a>

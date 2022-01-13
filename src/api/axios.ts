@@ -11,6 +11,11 @@ instance.interceptors.response.use((res) => {
     return res.data;
   } else {
     Toast.fail("请求不成功");
+    return Promise.reject({
+      code: 1,
+      message: "failure",
+      data: "请求不成功",
+    });
   }
 });
 

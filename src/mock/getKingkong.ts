@@ -5,7 +5,7 @@ export default [
     url: "/api/home/kingkong",
     method: "get",
     response: () => ({
-      code: 2,
+      code: 0,
       message: "success",
       data: [
         {

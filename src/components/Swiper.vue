@@ -1,12 +1,7 @@
 <script setup lang="ts">
+import { Image } from '@/api/types';
 
-export interface Image {
-	id: number,
-	url: string,
-	name: string,
-};
-
-const props = defineProps<{
+defineProps<{
 	images: Image[],
 }>();
 
@@ -14,7 +9,7 @@ const props = defineProps<{
 
 <template>
 	<van-swipe class="swipe" :autoplay="3000" lazy-render indicator-color="#1baeae">
-		<van-swipe-item v-for="image in props.images" :key="image.id">
+		<van-swipe-item v-for="image in images" :key="image.id">
 			<img :src="image.url" />
 		</van-swipe-item>
 	</van-swipe>
