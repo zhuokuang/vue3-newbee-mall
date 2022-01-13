@@ -25,6 +25,7 @@ const props = defineProps<{
 <style scoped lang="less">
 .kingkong {
 	width: 100%;
+	padding-top: 6px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;

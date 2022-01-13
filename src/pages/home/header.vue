@@ -36,7 +36,7 @@ const props = defineProps({
 }
 
 .header.active {
-	background-color: #1baeae;
+	background-color: @main-green;
 }
 
 .search {

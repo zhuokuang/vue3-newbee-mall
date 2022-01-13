@@ -1,8 +1,12 @@
 <template>
 	<div class="nav-bar">
 		<div class="nav-list">
-			<router-link class="nav-item" v-for="route in NavRoutes" :to="route.path">
-				<van-icon :name="(route.meta?.icon as string)" size="24" />
+			<router-link class="nav-item" v-for="route in NavRoutes" :to="route.path" v-slot="{ isActive }">
+				<van-icon
+					:name="(route.meta?.icon as string)"
+					size="24"
+					:color="isActive ? '#1baeae' : '#666'"
+				/>
 				<span>{{ route.meta?.title }}</span>
 			</router-link>
 		</div>
