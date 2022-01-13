@@ -28,7 +28,7 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: "/category",
     name: "category",
-    component: () => import("@/pages/Category.vue"),
+    component: () => import("@/pages/category/index.vue"),
     meta: {
       level: 1,
       nav: true,

@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { NavRoutes } from "@/router";
+</script>
+
 <template>
 	<div class="nav-bar">
 		<div class="nav-list">
@@ -12,10 +16,6 @@
 		</div>
 	</div>
 </template>
-
-<script setup lang="ts">
-import { NavRoutes } from "@/router";
-</script>
 
 <style scoped>
 .nav-bar {

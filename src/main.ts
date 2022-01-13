@@ -12,6 +12,7 @@ import {
   Toast,
   Swipe,
   SwipeItem,
+  Search,
 } from "vant";
 
 createApp(App)
@@ -22,6 +23,7 @@ createApp(App)
   .use(Button)
   .use(Swipe)
   .use(SwipeItem)
+  .use(Search)
   .use(Toast)
   .use(router)
   .mount("#app");
