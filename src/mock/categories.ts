@@ -12,13 +12,13 @@ export default [
           categoryId: 15,
           categoryLevel: 1,
           categoryName: "家电 数码 手机",
-          secondLevelCategoryVOS: [
+          categoryChildren: [
             {
               categoryId: 17,
               parentId: 15,
               categoryLevel: 2,
               categoryName: "家电",
-              thirdLevelCategoryVOS: [
+              categoryChildren: [
                 {
                   categoryId: 20,
                   categoryLevel: 3,
@@ -59,7 +59,7 @@ export default [
               parentId: 15,
               categoryLevel: 2,
               categoryName: "数码",
-              thirdLevelCategoryVOS: [
+              categoryChildren: [
                 {
                   categoryId: 32,
                   categoryLevel: 3,
@@ -119,7 +119,7 @@ export default [
               parentId: 15,
               categoryLevel: 2,
               categoryName: "手机",
-              thirdLevelCategoryVOS: [
+              categoryChildren: [
                 {
                   categoryId: 45,
                   categoryLevel: 3,
@@ -177,13 +177,13 @@ export default [
           categoryId: 16,
           categoryLevel: 1,
           categoryName: "女装 男装 穿搭",
-          secondLevelCategoryVOS: [
+          categoryChildren: [
             {
               categoryId: 67,
               parentId: 16,
               categoryLevel: 2,
               categoryName: "女装",
-              thirdLevelCategoryVOS: [
+              categoryChildren: [
                 { categoryId: 76, categoryLevel: 3, categoryName: "外套" },
               ],
             },
@@ -193,13 +193,13 @@ export default [
           categoryId: 61,
           categoryLevel: 1,
           categoryName: "家具 家饰 家纺",
-          secondLevelCategoryVOS: [
+          categoryChildren: [
             {
               categoryId: 70,
               parentId: 61,
               categoryLevel: 2,
               categoryName: "家具",
-              thirdLevelCategoryVOS: [
+              categoryChildren: [
                 { categoryId: 77, categoryLevel: 3, categoryName: "沙发" },
               ],
             },
@@ -209,13 +209,13 @@ export default [
           categoryId: 59,
           categoryLevel: 1,
           categoryName: "运动 户外 乐器",
-          secondLevelCategoryVOS: [
+          categoryChildren: [
             {
               categoryId: 73,
               parentId: 59,
               categoryLevel: 2,
               categoryName: "运动",
-              thirdLevelCategoryVOS: [
+              categoryChildren: [
                 { categoryId: 78, categoryLevel: 3, categoryName: "跑鞋" },
               ],
             },
@@ -225,13 +225,13 @@ export default [
           categoryId: 60,
           categoryLevel: 1,
           categoryName: "游戏 动漫 影视",
-          secondLevelCategoryVOS: [
+          categoryChildren: [
             {
               categoryId: 79,
               parentId: 60,
               categoryLevel: 2,
               categoryName: "游戏",
-              thirdLevelCategoryVOS: [
+              categoryChildren: [
                 { categoryId: 82, categoryLevel: 3, categoryName: "LOL" },
               ],
             },
@@ -241,13 +241,13 @@ export default [
           categoryId: 62,
           categoryLevel: 1,
           categoryName: "美妆 清洁 宠物",
-          secondLevelCategoryVOS: [
+          categoryChildren: [
             {
               categoryId: 83,
               parentId: 62,
               categoryLevel: 2,
               categoryName: "美妆",
-              thirdLevelCategoryVOS: [
+              categoryChildren: [
                 { categoryId: 86, categoryLevel: 3, categoryName: "口红" },
                 { categoryId: 104, categoryLevel: 3, categoryName: "睫毛膏" },
                 { categoryId: 103, categoryLevel: 3, categoryName: "腮红" },
@@ -263,13 +263,13 @@ export default [
           categoryId: 63,
           categoryLevel: 1,
           categoryName: "工具 装修 建材",
-          secondLevelCategoryVOS: [
+          categoryChildren: [
             {
               categoryId: 87,
               parentId: 63,
               categoryLevel: 2,
               categoryName: "工具",
-              thirdLevelCategoryVOS: [
+              categoryChildren: [
                 { categoryId: 90, categoryLevel: 3, categoryName: "转换器" },
               ],
             },
@@ -279,13 +279,13 @@ export default [
           categoryId: 66,
           categoryLevel: 1,
           categoryName: "鞋靴 箱包 配件",
-          secondLevelCategoryVOS: [
+          categoryChildren: [
             {
               categoryId: 95,
               parentId: 66,
               categoryLevel: 2,
               categoryName: "鞋靴",
-              thirdLevelCategoryVOS: [
+              categoryChildren: [
                 { categoryId: 98, categoryLevel: 3, categoryName: "休闲鞋" },
               ],
             },
@@ -295,13 +295,13 @@ export default [
           categoryId: 65,
           categoryLevel: 1,
           categoryName: "玩具 孕产 用品",
-          secondLevelCategoryVOS: [
+          categoryChildren: [
             {
               categoryId: 115,
               parentId: 65,
               categoryLevel: 2,
               categoryName: "玩具",
-              thirdLevelCategoryVOS: [
+              categoryChildren: [
                 { categoryId: 116, categoryLevel: 3, categoryName: "机器人" },
               ],
             },

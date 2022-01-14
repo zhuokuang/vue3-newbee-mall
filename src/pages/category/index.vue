@@ -1,21 +1,19 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue"
-import { useRouter } from 'vue-router';
 import BottomBar from '@/components/BottomBar.vue';
+import Header from './Header.vue';
+import Sidebar from './Sidebar.vue';
+import Content from './Content.vue';
 import { getCategories } from '@/api/getCategories';
 import { categoryItem } from '@/api/types';
 
-const router = useRouter();
-const activeBar = ref();
+const activeBar = ref<number>(0);
 const categories = ref<categoryItem[]>([]);
 
-const onBack = () => {
-	router.replace('/home');
-}
-
-const onChange = (index: number) => {
-	console.log(index);
-	console.log(activeBar.value);
+// TODO: Maybe the function should be used with emit
+const onChangeBar = (index: number) => {
+	console.log(index)
+	activeBar.value = index;
 }
 
 onMounted(() => {
@@ -27,60 +25,32 @@ onMounted(() => {
 
 <template>
 	<!-- 头部搜索框 -->
-	<header class="header">
-		<van-icon name="arrow-left" color="#656771" size="16" @click="onBack" />
-		<router-link class="search" :to="{ name: 'search' }">
-			<!-- <van-search disabled placeholder="请输入商品关键词" shape="round" /> -->
-			<van-icon name="search" color="#656771" size="16" />
-			<span>请输入商品关键词</span>
-		</router-link>
-		<van-icon name="ellipsis" color="#656771" size="16" />
-		<!-- <van-divider /> -->
-	</header>
+	<Header />
 
-	<!-- 侧边栏 -->
-	<van-sidebar class="sidebar" v-model="activeBar" @change="onChange">
-		<van-sidebar-item
-			class="sidebar-item"
-			v-for="category in categories"
-			:title="category.categoryName"
-		/>
-	</van-sidebar>
+	<main class="main-wrap">
+		<!-- 侧边栏 -->
+		<Sidebar class="sidebar" :active="activeBar" :categories="categories" :onChange="onChangeBar" />
+
+		<!-- 内容区 -->
+		<Content class="content" :categories="categories[activeBar]?.categoryChildren || []" />
+	</main>
 
 	<!-- 底部导航栏 -->
 	<bottom-bar />
 </template>
 
 <style scoped lang="less">
-.header {
-	width: 100%;
-	height: 50px;
-	padding: 0 15px;
-	border-bottom: 1px solid #eee;
+.main-wrap {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-.search {
-	width: 276px;
-	height: 30px;
-	background-color: #f7f7f7;
-	padding: 0 12px;
-	border-radius: 20px;
-	font-size: 12px;
-	color: #bbb;
-	display: flex;
-	align-items: center;
+	height: calc(100vh - 50px - 50px);
+	align-items: stretch;
 
-	span {
-		padding: 0 8px;
+	.sidebar {
+		width: 30%;
 	}
-}
-.sidebar {
-	width: 120px;
 
-	&-item {
-		padding: 20px 10px;
+	.content {
+		flex: 1;
 	}
 }
 </style>
