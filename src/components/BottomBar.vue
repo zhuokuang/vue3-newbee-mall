@@ -7,7 +7,7 @@ import { NavRoutes } from "@/router";
 		<div class="nav-list">
 			<router-link class="nav-item" v-for="route in NavRoutes" :to="route.path" v-slot="{ isActive }">
 				<van-icon
-					:name="(route.meta?.icon as string)"
+					:name="isActive ? (route.meta?.activeIcon as string) : (route.meta?.icon as string)"
 					size="24"
 					:color="isActive ? '#1baeae' : '#666'"
 				/>

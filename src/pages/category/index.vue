@@ -5,7 +5,7 @@ import Search from '@/components/Search.vue';
 </script>
 
 <template>
-	<Search />
+	<Search placeholder="MacBook Pro" />
 	<bottom-bar />
 </template>
 

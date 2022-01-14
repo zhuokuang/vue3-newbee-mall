@@ -14,6 +14,7 @@ export const routes: Array<RouteRecordRaw> = [
       nav: true,
       // 使用 vant 组件库图标字体，icon 为图标字体名称
       icon: "wap-home-o",
+      activeIcon: "wap-home",
       title: "主页",
     },
   },
@@ -33,6 +34,7 @@ export const routes: Array<RouteRecordRaw> = [
       level: 1,
       nav: true,
       icon: "more-o",
+      activeIcon: "more",
       title: "分类",
     },
   },
@@ -44,6 +46,7 @@ export const routes: Array<RouteRecordRaw> = [
       level: 1,
       nav: true,
       icon: "cart-o",
+      activeIcon: "cart",
       title: "购物车",
     },
   },
@@ -54,7 +57,8 @@ export const routes: Array<RouteRecordRaw> = [
     meta: {
       level: 1,
       nav: true,
-      icon: "user-circle-o",
+      icon: "manager-o",
+      activeIcon: "manager",
       title: "我的",
     },
   },
