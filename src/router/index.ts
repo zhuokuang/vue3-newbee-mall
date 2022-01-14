@@ -62,6 +62,14 @@ export const routes: Array<RouteRecordRaw> = [
       title: "我的",
     },
   },
+  {
+    path: "/search",
+    name: "search",
+    component: () => import("@/pages/search/index.vue"),
+    meta: {
+      level: 2,
+    },
+  },
 ];
 
 const router = createRouter({

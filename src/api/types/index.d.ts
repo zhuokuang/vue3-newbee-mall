@@ -7,3 +7,4 @@ export * from "./goods-item";
 export * from "./kingkong";
 export * from "./user";
 export * from "./image";
+export * from "./category-item";

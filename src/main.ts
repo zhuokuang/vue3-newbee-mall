@@ -13,6 +13,9 @@ import {
   Swipe,
   SwipeItem,
   Search,
+  Divider,
+  Sidebar,
+  SidebarItem,
 } from "vant";
 
 createApp(App)
@@ -24,6 +27,9 @@ createApp(App)
   .use(Swipe)
   .use(SwipeItem)
   .use(Search)
+  .use(Divider)
+  .use(Sidebar)
+  .use(SidebarItem)
   .use(Toast)
   .use(router)
   .mount("#app");
