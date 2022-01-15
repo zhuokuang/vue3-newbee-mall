@@ -8,3 +8,4 @@ export * from "./kingkong";
 export * from "./user";
 export * from "./image";
 export * from "./category-item";
+export * from "./user-info";

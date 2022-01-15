@@ -11,14 +11,21 @@ export default [
         (username === "kz" && password === "cr") ||
         (username === "cr" && password === "kz")
       ) {
+        // token 是 username | 1970年1月1日至今的天数
+        // 例如：admin|19007
+        const token =
+          username +
+          "|" +
+          Math.floor(Number(new Date()) / (1000 * 60 * 60 * 24));
         return {
           code: 0,
           message: "login success",
-          data: {},
+          data: { token },
         };
       }
+      // 登录失败
       return {
-        code: 1,
+        code: 2,
         message: "login failed",
         data: {},
       };

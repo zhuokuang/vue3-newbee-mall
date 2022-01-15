@@ -48,7 +48,6 @@ onMounted(() => {
 	});
 	getAllGoodsList().then((res) => {
 		[goods.newGoodses, goods.hotGoodses, goods.recommendGoodses] = res;
-		console.log(goods)
 	})
 });
 

@@ -1,13 +1,18 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { reactive, toRefs } from "vue";
 import { useRouter } from "vue-router";
 import { NavBar, Toast } from 'vant';
 import { postLogin } from '@/api/login';
 import { User } from '@/api/types'
+import { setToken } from "@/common/utils";
 
 const router = useRouter();
-const username = ref('');
-const password = ref('');
+const user = reactive({
+	username: '',
+	password: '',
+});
+
+const { username, password } = toRefs(user);
 
 // 头部返回、设置
 const onBack = () => {
@@ -22,6 +27,7 @@ const onSubmit = (form: User) => {
 		console.log('res', res);
 		if (res.code === 0) {
 			Toast.success('登录成功');
+			setToken(res.data.token);
 			router.push('/home');
 		}
 		else {
