@@ -16,6 +16,8 @@ import {
   Divider,
   Sidebar,
   SidebarItem,
+  Tabs,
+  Tab,
 } from "vant";
 
 createApp(App)
@@ -30,6 +32,8 @@ createApp(App)
   .use(Divider)
   .use(Sidebar)
   .use(SidebarItem)
+  .use(Tabs)
+  .use(Tab)
   .use(Toast)
   .use(router)
   .mount("#app");

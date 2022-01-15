@@ -1,23 +1,27 @@
 <script setup lang="ts">
-import { Toast } from 'vant';
-import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const props = defineProps({
+	value: String,
 	placeholder: String,
 });
 
+const emit = defineEmits(['update:value', 'search']);
+
 const router = useRouter();
-const searchText = ref<string>('');
 
 const onSearch = () => {
 	// TODO: add search logic
-	const value = searchText.value || props.placeholder;
-	Toast(value);
+	const val = props.value || props.placeholder;
+	emit('search', val);
 }
 
 const onBack = () => {
 	router.back();
+}
+
+const onUpdate = (val: string) => {
+	emit('update:value', val);
 }
 
 </script>
@@ -25,11 +29,12 @@ const onBack = () => {
 <template>
 	<div class="search">
 		<van-search
-			v-model="searchText"
+			:model-value="value"
 			shape="round"
 			show-action
 			:placeholder="placeholder"
 			@search="onSearch"
+			@update:model-value="onUpdate"
 		>
 			<template #left>
 				<van-icon name="arrow-left" color="#656771" size="16" @click="onBack" />

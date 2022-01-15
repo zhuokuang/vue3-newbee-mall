@@ -12,7 +12,6 @@ const categories = ref<categoryItem[]>([]);
 
 // TODO: Maybe the function should be used with emit
 const onChangeBar = (index: number) => {
-	console.log(index)
 	activeBar.value = index;
 }
 
