@@ -2,6 +2,7 @@
 import { onMounted, reactive, toRefs } from 'vue';
 import BottomBar from '@/components/BottomBar.vue';
 import Header from '@/components/Header.vue';
+import Card from './Card.vue';
 import { getUserInfo } from '@/api/getUserInfo';
 import { UserInfo } from '@/api/types';
 
@@ -25,11 +26,15 @@ onMounted(() => {
 <template>
 	<div>
 		<Header title="我的" />
-		<p>{{ loginName }}</p>
-		<p>{{ nickName }}</p>
-		<p>{{ introduce }}</p>
+		<Card
+			avatar-url="https://s.yezgea02.com/1604040746310/aaaddd.png"
+			:nick-name="nickName"
+			:login-name="loginName"
+			:introduce="introduce"
+		/>
+		<!-- 使用 Vant List 组件 -->
+		<bottom-bar />
 	</div>
-	<bottom-bar />
 </template>
 
 <style scoped>

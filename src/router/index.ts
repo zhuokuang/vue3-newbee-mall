@@ -53,7 +53,7 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: "/user",
     name: "user",
-    component: () => import("@/pages/User.vue"),
+    component: () => import("@/pages/user/index.vue"),
     meta: {
       level: 1,
       nav: true,

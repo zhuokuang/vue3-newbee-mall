@@ -31,5 +31,6 @@ const goBack = () => {
 	justify-content: space-between;
 	align-items: center;
 	font-size: 14px;
+	border-bottom: 1px solid #eee;
 }
 </style>
