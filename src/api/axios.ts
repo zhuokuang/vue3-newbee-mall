@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Toast } from "vant";
 import router from "@/router";
+import { setToken } from "@/common/utils";
 
 const instance = axios.create({
   baseURL: "http://localhost:3000",
@@ -16,6 +17,12 @@ instance.interceptors.response.use((res) => {
     // 未登录，需要登录
     if (res.data.code === 1) {
       router.push({ name: "login" });
+      return Promise.reject(res.data);
+    }
+    if (window.location.pathname === "/login") {
+      setToken(res.data.data?.token);
+      instance.defaults.headers.common["token"] =
+        window.localStorage.getItem("token") || "";
     }
     return res.data;
   } else {

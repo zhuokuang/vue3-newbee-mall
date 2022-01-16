@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, reactive, toRefs } from 'vue';
+import { onActivated, reactive, toRefs } from 'vue';
 import BottomBar from '@/components/BottomBar.vue';
 import Header from '@/components/Header.vue';
 import Card from './Card.vue';
@@ -14,7 +14,7 @@ const user = reactive<UserInfo>({
 
 const { loginName, nickName, introduce } = toRefs(user);
 
-onMounted(() => {
+onActivated(() => {
 	getUserInfo().then(({ data }) => {
 		user.loginName = data.loginName;
 		user.nickName = data.nickName;

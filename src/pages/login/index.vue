@@ -4,7 +4,6 @@ import { useRouter } from "vue-router";
 import { NavBar, Toast } from 'vant';
 import { postLogin } from '@/api';
 import { User } from '@/types'
-import { setToken } from "@/common/utils";
 
 const router = useRouter();
 const user = reactive({
@@ -24,10 +23,8 @@ const onClkMore = () => {
 
 const onSubmit = (form: User) => {
 	postLogin(form).then((res) => {
-		console.log('res', res);
 		if (res.code === 0) {
 			Toast.success('登录成功');
-			setToken(res.data.token);
 			router.push('/home');
 		}
 		else {
