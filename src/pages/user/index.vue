@@ -3,6 +3,7 @@ import { onActivated, reactive, toRefs } from 'vue';
 import BottomBar from '@/components/BottomBar.vue';
 import Header from '@/components/Header.vue';
 import Card from './Card.vue';
+import List from './List.vue';
 import { getUserInfo } from '@/api';
 import { UserInfo } from '@/types';
 
@@ -33,6 +34,7 @@ onActivated(() => {
 			:introduce="introduce"
 		/>
 		<!-- 使用 Vant List 组件 -->
+		<List />
 		<bottom-bar />
 	</div>
 </template>

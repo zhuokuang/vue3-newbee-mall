@@ -22,7 +22,7 @@ defineProps({
 .card {
 	height: 115px;
 	padding: 0 20px;
-	margin: 10px;
+	margin: 12px;
 	background: linear-gradient(90deg, #1baeae, #51c7c7);
 	border-radius: 6px;
 	box-shadow: 0 2px 5px #269090;
