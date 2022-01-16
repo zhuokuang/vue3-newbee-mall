@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Kingkong } from '@/api/types';
+import { Kingkong } from '@/types';
 
 defineProps<{
 	list: Kingkong[];

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { categoryItem } from '@/api/types';
+import { categoryItem } from '@/types';
 
 defineProps<{
 	categories: categoryItem[];

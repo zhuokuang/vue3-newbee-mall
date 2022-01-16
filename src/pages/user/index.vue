@@ -3,8 +3,8 @@ import { onMounted, reactive, toRefs } from 'vue';
 import BottomBar from '@/components/BottomBar.vue';
 import Header from '@/components/Header.vue';
 import Card from './Card.vue';
-import { getUserInfo } from '@/api/getUserInfo';
-import { UserInfo } from '@/api/types';
+import { getUserInfo } from '@/api';
+import { UserInfo } from '@/types';
 
 const user = reactive<UserInfo>({
 	loginName: '',

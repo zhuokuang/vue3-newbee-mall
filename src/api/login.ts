@@ -1,7 +1,6 @@
 import axios from "./axios";
-import { ResBaseType, User } from "@/api/types";
+import { ResBaseType, User } from "@/types";
 
-export const postLogin = (body: {
-  username: string;
-  password: string;
-}): Promise<ResBaseType<{ token: string }>> => axios.post("/api/login", body);
+export const postLogin = (
+  body: User
+): Promise<ResBaseType<{ token: string }>> => axios.post("/api/login", body);

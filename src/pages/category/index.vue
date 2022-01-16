@@ -4,8 +4,8 @@ import BottomBar from '@/components/BottomBar.vue';
 import Header from './Header.vue';
 import Sidebar from './Sidebar.vue';
 import Content from './Content.vue';
-import { getCategories } from '@/api/getCategories';
-import { categoryItem } from '@/api/types';
+import { getCategories } from '@/api';
+import { categoryItem } from '@/types';
 
 const activeBar = ref<number>(0);
 const categories = ref<categoryItem[]>([]);

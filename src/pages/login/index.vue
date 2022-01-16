@@ -2,8 +2,8 @@
 import { reactive, toRefs } from "vue";
 import { useRouter } from "vue-router";
 import { NavBar, Toast } from 'vant';
-import { postLogin } from '@/api/login';
-import { User } from '@/api/types'
+import { postLogin } from '@/api';
+import { User } from '@/types'
 import { setToken } from "@/common/utils";
 
 const router = useRouter();

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Image } from '@/api/types';
+import { Image } from '@/types';
 
 defineProps<{
 	images: Image[],

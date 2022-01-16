@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { GoodsItem } from '@/api/types';
+import { GoodsItem } from '@/types';
 
 defineProps<{
 	title: string;

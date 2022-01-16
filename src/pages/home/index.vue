@@ -5,10 +5,8 @@ import Swiper from '@/components/Swiper.vue';
 import Header from "./header.vue";
 import KingkongBall from "./kingkongBall.vue";
 import GoodsList from '@/components/GoodsList.vue';
-import { getSwipeImg } from '@/api/getSwipeImg';
-import { getKingkong } from "@/api/getKingkong";
-import { getAllGoodsList } from '@/api/getGoodsList';
-import { GoodsItem, Kingkong, Image } from '@/api/types';
+import { getAllGoodsList, getKingkong, getSwipeImg } from '@/api';
+import { GoodsItem, Kingkong, Image } from '@/types';
 
 type Goods = {
 	newGoodses: GoodsItem[],
